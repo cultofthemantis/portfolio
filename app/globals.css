@@ -33,9 +33,12 @@ h1 {
   color: rgb(133, 166, 244);
   font-size: 150px;
   text-shadow: 10px 10px 0px #0a0a0a;
+  font-family: 'Times New Roman', Times, serif;
 }
 
-
+p{
+  font-family: 'Times New Roman', Times, serif;
+}
 
 .sponge-container {
   display: flex;
