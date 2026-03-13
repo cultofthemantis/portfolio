@@ -51,7 +51,7 @@ const skills = [
   return (
     <main className="min-h-screen bg-gradient-to-b from-indigo-950 via-purple-900 to-black text-white font-serif">
       <div className="text-center py-24 px-6">
-        <h1 className="font-bold mb-4 bg-linear-to-r from-purple-100 to-white-900 bg-clip-text text-transparent ">
+        <h1 className="font-bold mb-4 bg-linear-to-r from-purple-100 to-white-900 bg-clip-text text-transparent font-serif ">
           Kellen Dixon
         </h1>
 
