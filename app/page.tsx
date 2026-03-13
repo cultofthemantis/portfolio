@@ -1,6 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaNode } from "react-icons/fa";
+import { SiTypescript, SiTailwindcss, SiNextdotjs } from "react-icons/si";
+import { SlQuestion } from "react-icons/sl";
+import { TbApi, TbApiApp, TbSql } from "react-icons/tb";
 
 type Repo = {
   id: number;
@@ -32,35 +36,33 @@ export default function Home() {
     fetchRepos();
   }, []);
 
-  const skills = [
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "Next.js",
-    "HTML",
-    "CSS",
-    "Tailwind",
-    "C#",
-    ".NET",
-    "REST APIs",
-    "SQL Databases",
-  ];
+const skills = [
+  { name: "React", icon: FaReact },
+  { name: "Next.js", icon: SiNextdotjs },
+  { name: "JavaScript", icon: FaJs },
+  { name: "HTML", icon: FaHtml5 },
+  { name: "CSS", icon: FaCss3Alt },
+  { name: "Tailwind", icon: SiTailwindcss },
+  { name: "TypeScript", icon: SiTypescript},
+  { name: "SQL", icon:TbSql},
+  { name: "REST APIs", icon: TbApi},
+];
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-indigo-950 via-purple-900 to-black text-white font-serif">
       <div className="text-center py-24 px-6">
-        <h1 className=" font-bold mb-4 bg-linear-to-r from-purple-100 to-white-900 bg-clip-text text-transparent ">
+        <h1 className="font-bold mb-4 bg-linear-to-r from-purple-100 to-white-900 bg-clip-text text-transparent ">
           Kellen Dixon
         </h1>
 
-        <p className="text-5xl text-purple-200">Full Stack Developer</p>
+        <p className="fullstack-text text-5xl text-cyan-200">Full Stack Developer</p>
       </div>
 
       <div className="max-w-6xl mx-auto px-6 space-y-20">
-        <div className="sponge-container backdrop-blur-lg bg-black/60 border-b-cyan-700 rounded-2xl p-10  drop-shadow-2xl hover:scale-105 transition shadow-lg hover:shadow-cyan-500/30">
+        <div className="sponge-container backdrop-blur-lg bg-black/60 border-b-cyan-700 rounded-2xl p-10  drop-shadow-2xl hover:scale-115  transition shadow-lg hover:shadow-cyan-500/30">
           <h2 className="text-3xl font-bold mb-6 text-cyan-500 justify-center text-center">About Me</h2>
 
-          <p className="text-lg leading-relaxed text-purple-100 font-serif">
+          <p className="sponge-text leading-relaxed text-purple-100 font-serif">
             I'm a Junior Software Developer currently enrolled at CodeStack
             Academy in Stockton, CA. I consider myself versatile and can work
             confidently in both the frontend and the backend. I personally enjoy
@@ -79,22 +81,27 @@ export default function Home() {
           </div>
         </div>
 
-        <div>
-          <h2 className="text-3xl font-bold mb-8 text-center text-cyan-100">
-            Skills
-          </h2>
+ <div>
+  <h2 className="text-5xl font-bold mb-8 text-center text-cyan-100">
+    Skills
+  </h2>
 
-          <div className="flex flex-wrap justify-center gap-4">
-            {skills.map((skill, index) => (
-              <div
-                key={index}
-                className="px-5 py-2 rounded-full bg-cyan-700/40 border border-purple-400/40 hover:scale-105 transition shadow-lg hover:shadow-purple-400"
-              >
-                {skill}
-              </div>
-            ))}
-          </div>
+  <div className="flex flex-wrap justify-center gap-4">
+    {skills.map((skill, index) => {
+      const Icon = skill.icon;
+
+      return (
+        <div
+          key={index}
+          className="flex items-center gap-3 px-5 py-2 rounded-full text-3xl bg-cyan-700/40 border border-purple-400/40 hover:scale-105 transition shadow-lg hover:shadow-purple-400"
+        >
+          <Icon />
+          {skill.name}
         </div>
+      );
+    })}
+  </div>
+</div>
 
         <div>
           <h2 className="text-3xl font-bold mb-10 text-center text-cyan-100">
