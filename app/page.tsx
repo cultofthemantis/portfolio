@@ -82,7 +82,7 @@ const skills = [
         </div>
 
  <div>
-  <h2 className="text-5xl font-bold mb-8 text-center text-cyan-100">
+  <h2 className="text-5xl font-bold mb-8 text-center text-cyan-500">
     Skills
   </h2>
 
@@ -104,7 +104,7 @@ const skills = [
 </div>
 
         <div>
-          <h2 className="text-3xl font-bold mb-10 text-center text-cyan-100">
+          <h2 className="text-3xl font-bold mb-10 text-center text-cyan-400">
             GitHub Projects
           </h2>
 
