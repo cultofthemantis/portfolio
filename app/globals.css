@@ -26,3 +26,37 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+h1 {
+  -webkit-text-stroke: 1px rgb(0, 162, 255);
+  color: rgb(133, 166, 244);
+  font-size: 150px;
+  text-shadow: 20px 30px 0px #0a0a0a;
+}
+
+
+.sponge-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+  flex-direction: row;
+}
+
+.spunchbob {
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  display: flex;
+  transition: max-width 0.5s ease, opacity 0.5s ease;
+  flex-direction: row;
+  border-radius: 12px;
+  border: 2px solid #a855f7;
+  box-shadow: 0 10px 25px rgba(168, 85, 247, 0.4);
+}
+
+.sponge-container:hover .spunchbob {
+  max-width: 110px;
+  opacity: 1;
+}
