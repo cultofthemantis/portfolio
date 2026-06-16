@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaNode } from "react-icons/fa";
 import { SiTypescript, SiTailwindcss, SiNextdotjs } from "react-icons/si";
 import { SlQuestion } from "react-icons/sl";
-import { TbApi, TbApiApp, TbSql } from "react-icons/tb";
+import { TbApi, TbApiApp, TbApiOff, TbBrandCSharp, TbSql } from "react-icons/tb";
 
 type Repo = {
   id: number;
@@ -37,32 +37,34 @@ export default function Home() {
   }, []);
 
 const skills = [
-  { name: "React", icon: FaReact },
-  { name: "Next.js", icon: SiNextdotjs },
-  { name: "JavaScript", icon: FaJs },
   { name: "HTML", icon: FaHtml5 },
   { name: "CSS", icon: FaCss3Alt },
-  { name: "Tailwind", icon: SiTailwindcss },
+  { name: "C#", icon: TbBrandCSharp},
+  { name: "JavaScript", icon: FaJs },
   { name: "TypeScript", icon: SiTypescript},
   { name: "SQL", icon:TbSql},
+  { name: "Next.js", icon: SiNextdotjs },
+  { name: "React", icon: FaReact },
+  { name: "Tailwind", icon: SiTailwindcss },
   { name: "REST APIs", icon: TbApi},
+  { name: "CLEAN APIs", icon: TbApiApp},
 ];
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-indigo-950 via-purple-900 to-black text-white font-serif">
+    <main className="min-h-screen bg-gradient-to-b from-green-950 via-blue-900 to-black text-white font-serif">
       <div className="text-center py-24 px-6">
-        <h1 className="font-bold mb-4 bg-linear-to-r from-purple-100 to-white-900 bg-clip-text text-transparent font-serif ">
+        <h1 className="font-bold mb-4 bg-linear-to-r from-green-100 to-white-900 bg-clip-text text-transparent font-serif ">
           Kellen Dixon
         </h1>
 
-        <p className="fullstack-text text-5xl text-cyan-200">Full Stack Developer</p>
+        <p className="fullstack-text text-5xl text-white">Full Stack Developer</p>
       </div>
 
       <div className="max-w-6xl mx-auto px-6 space-y-20">
-        <div className="sponge-container backdrop-blur-lg bg-black/60 border-b-cyan-700 rounded-2xl p-10  drop-shadow-2xl hover:scale-115  transition shadow-lg hover:shadow-cyan-500/30">
-          <h2 className="text-3xl font-bold mb-6 text-cyan-500 justify-center text-center">About Me</h2>
+        <div className="sponge-container backdrop-blur-lg bg-black/60 border-b-red-700 rounded-2xl p-10  drop-shadow-2xl hover:scale-115  transition shadow-lg hover:shadow-green-500/30">
+          <h2 className="text-3xl font-bold mb-6 text-white justify-center text-center">About Me</h2>
 
-          <p className="sponge-text leading-relaxed text-purple-100 font-serif">
+          <p className="sponge-text leading-relaxed text-green-100 font-serif">
             I'm a Junior Software Developer currently enrolled at CodeStack
             Academy in Stockton, CA. I consider myself versatile and can work
             confidently in both the frontend and the backend. I personally enjoy
@@ -76,24 +78,24 @@ const skills = [
             <img
               src="./spunchbog.jpg"
               alt="Kellen Dixon"
-              className="spunchbob rounded-xl border border-purple-400 shadow-lg"
+              className="spunchbob rounded-xl border border-green-400 shadow-lg"
             />
           </div>
         </div>
 
  <div>
-  <h2 className="text-5xl font-bold mb-8 text-center text-cyan-500">
+  <h2 className="text-5xl font-bold mb-8 text-center text-white ">
     Skills
   </h2>
 
-  <div className="flex flex-wrap justify-center gap-4">
+  <div className="flex flex-wrap justify-center gap-4"> 
     {skills.map((skill, index) => {
       const Icon = skill.icon;
 
       return (
         <div
           key={index}
-          className="flex items-center gap-3 px-5 py-2 rounded-full text-3xl bg-cyan-700/40 border border-purple-400/40 hover:scale-105 transition shadow-lg hover:shadow-purple-400"
+          className="flex items-center gap-3 px-5 py-2 rounded-full text-3xl bg-green-700/40 border border-cyan-400/40 hover:scale-105 transition shadow-lg hover:shadow-cyan-400"
         >
           <Icon />
           {skill.name}
@@ -104,9 +106,9 @@ const skills = [
 </div>
 
         <div>
-          <h2 className="text-3xl font-bold mb-10 text-center text-cyan-400">
+          <h2 className="text-3xl font-bold mb-10 text-center text-blue-100">
             GitHub Projects
-          </h2>
+              </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {repos.map((repo) => (
@@ -114,17 +116,17 @@ const skills = [
               key={repo.id}
               href={repo.html_url}
               target="_blank"
-              className="group bg-neutral-900 border border-blue-500/30 p-6 rounded-xl hover:scale-105 transition shadow-lg hover:shadow-cyan-500/30"
+              className="group bg-neutral-900 border border-blue-500/30 p-6 rounded-xl hover:scale-105 transition shadow-lg hover:shadow-blue-500/30"
               >
-                <h3 className="text-xl font-bold mb-3 group-hover:text-cyan-500">
+                <h3 className="text-xl font-bold mb-3 group-hover:text-blue-500">
                   {repo.name}
                 </h3>
 
-                <p className="text-sm text-purple-200 mb-5">
+                <p className="text-sm text-blue-200 mb-5">
                   {repo.description || "Click to visit page"}
                 </p>
 
-                <div className="flex justify-between text-sm text-purple-300">
+                <div className="flex justify-between text-sm text-blue-300">
                   <span>⭐ {repo.stargazers_count}</span>
                   <span>{repo.language}</span>
                 </div>
